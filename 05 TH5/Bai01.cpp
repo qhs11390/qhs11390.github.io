@@ -20,13 +20,13 @@ using TREE = Node*;
 Node* CreateNode(int x) {
     Node* p = new Node;
     p->info = x;
-    p->left = p->right = nullptr;
+    p->left = p->right = NULL;
     return p;
 }
 
 // Hàm thêm node vào cây nhị phân tìm kiếm
 bool InsertNode(TREE& t, int x) {
-    if (t == nullptr) {
+    if (t == NULL) {
         t = CreateNode(x);
         return true;
     }
@@ -37,12 +37,12 @@ bool InsertNode(TREE& t, int x) {
 
 // a) Trung bình cộng tất cả các nút
 int DemNode(TREE root) {
-    if (root == nullptr) return 0;
+    if (root == NULL) return 0;
     return 1 + DemNode(root->left) + DemNode(root->right);
 }
 
 int TongNode(TREE root) {
-    if (root == nullptr) return 0;
+    if (root == NULL) return 0;
     return root->info + TongNode(root->left) + TongNode(root->right);
 }
 
@@ -55,14 +55,14 @@ float TrungBinhCong(TREE root) {
 
 // b) Trung bình cộng số dương
 int DemDuong(TREE root) {
-    if (root == nullptr) return 0;
+    if (root == NULL) return 0;
     int dem = DemDuong(root->left) + DemDuong(root->right);
     if (root->info > 0) dem++;
     return dem;
 }
 
 int TongDuong(TREE root) {
-    if (root == nullptr) return 0;
+    if (root == NULL) return 0;
     int tong = TongDuong(root->left) + TongDuong(root->right);
     if (root->info > 0) tong += root->info;
     return tong;
@@ -77,14 +77,14 @@ float TrungBinhDuong(TREE root) {
 
 // c) Trung bình cộng số âm
 int DemAm(TREE root) {
-    if (root == nullptr) return 0;
+    if (root == NULL) return 0;
     int dem = DemAm(root->left) + DemAm(root->right);
     if (root->info < 0) dem++;
     return dem;
 }
 
 int TongAm(TREE root) {
-    if (root == nullptr) return 0;
+    if (root == NULL) return 0;
     int tong = TongAm(root->left) + TongAm(root->right);
     if (root->info < 0) tong += root->info;
     return tong;
@@ -99,14 +99,14 @@ float TrungBinhAm(TREE root) {
 
 // Hàm duyệt NLR (in cây)
 void NLR(TREE t) {
-    if (t == nullptr) return;
+    if (t == NULL) return;
     cout << t->info << " ";
     NLR(t->left);
     NLR(t->right);
 }
 
 int main() {
-    TREE root = nullptr;
+    TREE root = NULL;
 
     // Dữ liệu mẫu
     int a[] = {5, -3, 7, -1, 0, 4, -6, 8, 2};
