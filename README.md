@@ -1,6 +1,6 @@
 # qhs11390.github.io
 
-## Danh sách bài tập đã thực hành:
+## Danh sách bài tập đã thực hành
 - Bài tập 1
 - LAB01
 - Bài tập sắp xếp (bài tập nhóm)
